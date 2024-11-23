@@ -17,12 +17,5 @@ phases:
 
   post_build:
     commands:
-      - echo "Post build steps..."
-      - echo "Packaging the build artifacts..."
-      - zip -r build.zip build/
-
-artifacts:
-  files:
-    - build.zip
-  discard-paths: yes
-
+      - echo "Post build steps completed."
+      - echo "No artifacts stored."
