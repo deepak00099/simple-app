@@ -3,19 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "No dependencies to install for a simple HTML/CSS app."
+      - echo "No dependencies needed for a simple HTML/CSS app."
 
   pre_build:
     commands:
-      - echo "Preparing build artifacts..."
+      - echo "Preparing the build environment..."
 
   build:
     commands:
-      - echo "Building the HTML/CSS app..."
+      - echo "Building the HTML/CSS website..."
       - mkdir -p build
       - cp -r * build/
 
   post_build:
     commands:
-      - echo "Post build steps completed."
-      - echo "No artifacts stored."
+      - echo "Build completed. No artifacts to store."
