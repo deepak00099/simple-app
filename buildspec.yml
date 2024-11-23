@@ -1,36 +1,28 @@
 version: 0.2
 
-env:
-  variables:
-    APP_NAME: "simple-web-app"
-    BUILD_DIR: "/build"
-
 phases:
   install:
-    runtime-versions:
-      python: 3.8
     commands:
-      - echo "Installing dependencies..."
-      - pip install -r requirements.txt
+      - echo "No dependencies to install for a simple HTML/CSS app."
 
   pre_build:
     commands:
-      - echo "Preparing for build..."
+      - echo "Preparing build artifacts..."
 
   build:
     commands:
-      - echo "Building the application..."
-      - mkdir -p $BUILD_DIR
-      - cp -r * $BUILD_DIR
-      - echo "Build completed successfully."
+      - echo "Building the HTML/CSS app..."
+      - mkdir -p build
+      - cp -r * build/
 
   post_build:
     commands:
-      - echo "Post build tasks..."
-      - echo "Build artifact ready."
-      - zip -r $BUILD_DIR.zip $BUILD_DIR
+      - echo "Post build steps..."
+      - echo "Packaging the build artifacts..."
+      - zip -r build.zip build/
 
 artifacts:
   files:
-    - $BUILD_DIR.zip
+    - build.zip
   discard-paths: yes
+
